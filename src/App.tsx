@@ -1,7 +1,9 @@
+import {Hero} from "./pages/hero";
+
 function App() {
     return (
         <>
-            <h2 className="text-center font-bold">Estudio jurídico Alvarez Rey</h2>
+            <Hero />
         </>
     );
 }
