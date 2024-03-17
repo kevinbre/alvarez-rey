@@ -1,8 +1,14 @@
+import {MutableRefObject} from "react";
+
 import {Button} from "../ui/button";
 
-export function Hero() {
+interface Props {
+    heroRef: MutableRefObject<null>;
+}
+
+export function Hero({heroRef}: Props) {
     return (
-        <section className="relative h-screen">
+        <section ref={heroRef} className="relative h-screen">
             <div
                 className="absolute w-full h-full bg-black"
                 style={{clipPath: "polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0 85%)"}}
