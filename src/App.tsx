@@ -4,11 +4,11 @@ import {Navbar} from "./components/layout/navbar/navbar";
 
 function App() {
     return (
-        <>
-            <Navbar />
+        <div className="font-monserrat">
             <Hero />
+            <Navbar />
             <Footer />
-        </>
+        </div>
     );
 }
 

@@ -1,7 +1,7 @@
 export function Footer() {
     return (
-        <>
-            <h1>hola boys!</h1>
-        </>
+        <div className="w-full h-screen">
+            <h1>footer</h1>
+        </div>
     );
 }
