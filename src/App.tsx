@@ -9,11 +9,11 @@ function App() {
     const footerRef = useRef(null);
 
     return (
-        <div className="font-monserrat bg-neutral-950">
+        <main className="font-monserrat bg-neutral-950">
             <Hero heroRef={heroRef} />
             <Navbar footerRef={footerRef} heroRef={heroRef} />
             <Footer footerRef={footerRef} />
-        </div>
+        </main>
     );
 }
 
