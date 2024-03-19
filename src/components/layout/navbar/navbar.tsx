@@ -32,7 +32,7 @@ export function Navbar({heroRef, footerRef}: Props) {
 
     return (
         <div
-            className="fixed top-0 w-full transition-all duration-500"
+            className="fixed top-0 z-20 w-full transition-all duration-500"
             style={{
                 background:
                     isVisible || isMobileMenuOpen
@@ -43,8 +43,7 @@ export function Navbar({heroRef, footerRef}: Props) {
         >
             <nav
                 ref={menuRef}
-                className="container flex items-center justify-between h-16 text-white transition-all duration-500 relative"
-                style={{color: isVisible ? "white" : "white"}}
+                className="container flex items-center justify-between h-16 text-white transition-all duration-500 text"
             >
                 <span className="text-xl font-extrabold cursor-pointer">LOGO</span>
 
@@ -54,7 +53,7 @@ export function Navbar({heroRef, footerRef}: Props) {
                     <ul className="flex items-center h-full gap-12">
                         <li className={navStyle}>Inicio</li>
                         <li className={navStyle}>¿Quiénes somos?</li>
-                        <li className={navStyle}>¿Qué hacémos?</li>
+                        <li className={navStyle}>¿Qué hacemos?</li>
                         <li className={navStyle}>Contacto</li>
                     </ul>
                 )}
@@ -63,8 +62,8 @@ export function Navbar({heroRef, footerRef}: Props) {
             {mobileResolution && (
                 <ul
                     className={` ${
-                        isMobileMenuOpen ? "h-screen opacity-1" : "h-0 opacity-0"
-                    } overflow-hidden transition-all flex flex-col h-screen w-screen left-0 duration-500 items-center py-20 bg-neutral-950 text-white absolute`}
+                        isMobileMenuOpen ? "h-screen opacity-1 py-20" : "h-0 opacity-0"
+                    } overflow-hidden transition-all flex flex-col w-screen left-0 duration-500 items-center bg-neutral-950 text-white absolute`}
                 >
                     <li
                         className={navStyle}
@@ -76,7 +75,7 @@ export function Navbar({heroRef, footerRef}: Props) {
                         Inicio
                     </li>
                     <li className={navStyle}>¿Quiénes somos?</li>
-                    <li className={navStyle}>¿Qué hacémos?</li>
+                    <li className={navStyle}>¿Qué hacemos?</li>
                     <li
                         className={navStyle}
                         onClick={() => {
