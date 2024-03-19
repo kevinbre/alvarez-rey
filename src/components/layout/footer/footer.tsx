@@ -6,86 +6,64 @@ interface Props {
 
 export function Footer({footerRef}: Props) {
     const hovStyle = "hover:underline hover:text-gray-100";
+    const thisYear = new Date().getFullYear();
 
     return (
-        <footer ref={footerRef} className="container w-full bg-neutral-950">
-            <div className="mx-auto max-w-screen-xl">
-                <div className="px-4 py-6 flex-col text-center md:grid gap-8 lg:py-8 md:grid-cols-3 flex items-center justify-between">
-                    <div className="mb-8 md:w-1/3">
-                        <h2 className="mb-6 text-sm font-semibold text-white uppercase">Compañía</h2>
-                        <ul className="text-gray-300 dark:text-gray-400 font-medium">
-                            <li className="mb-4">
-                                <a className={`${hovStyle}`} href="#">
-                                    Inicio
-                                </a>
+        <footer ref={footerRef} className=" w-full bg-neutral-950 pt-10 flex flex-col gap-6 border-t border-gray-700">
+            <div className="container">
+                <div className="flex gap-6 justify-between flex-col sm:flex-row">
+                    <div className="flex justify-start gap-2 flex-col items-center sm:items-start">
+                        <h2 className="text-sm font-semibold text-white uppercase">Compañía</h2>
+                        <ul className="text-gray-300 dark:text-gray-400 font-medium flex flex-col items-center sm:items-start gap-2">
+                            <li className={`${hovStyle}`}>
+                                <a href="#">Inicio</a>
                             </li>
-                            <li className="mb-4 ">
-                                <a className={`${hovStyle}`} href="#">
-                                    ¿Quiénes somos?
-                                </a>
+                            <li className={`${hovStyle}`}>
+                                <a href="#">¿Quiénes somos?</a>
                             </li>
-                            <li className="mb-4">
-                                <a className={`${hovStyle}`} href="#">
-                                    ¿Qué hacemos?
-                                </a>
+                            <li className={`${hovStyle}`}>
+                                <a href="#">¿Qué hacemos?</a>
                             </li>
                         </ul>
                     </div>
-                    <div className="mb-8 md:w-1/3">
-                        <h2 className="mb-6 text-sm font-semibold text-white uppercase">Centro de ayuda</h2>
-                        <ul className="text-gray-300 font-medium">
-                            <li className="mb-4">
-                                <a className={`${hovStyle}`} href="#">
-                                    Whatsapp
-                                </a>
+                    <div className="flex justify-start gap-2 flex-col items-center sm:items-start">
+                        <h2 className="text-sm font-semibold text-white uppercase">Centro de ayuda</h2>
+                        <ul className="text-gray-300 dark:text-gray-400 font-medium flex flex-col items-center sm:items-start gap-2">
+                            <li className={`${hovStyle}`}>
+                                <a href="#">Whatsapp</a>
                             </li>
-                            <li className="mb-4">
-                                <a className={`${hovStyle}`} href="#">
-                                    Email
-                                </a>
+                            <li className={`${hovStyle}`}>
+                                <a href="#">Email</a>
                             </li>
-                            <li className="mb-4">
-                                <a className={`${hovStyle}`} href="#">
-                                    Instagram
-                                </a>
+                            <li className={`${hovStyle}`}>
+                                <a href="#">Instagram</a>
                             </li>
-                            <li className="mb-4">
-                                <a className={`${hovStyle}`} href="#">
-                                    Facebook
-                                </a>
+                            <li className={`${hovStyle}`}>
+                                <a href="#">Facebook</a>
                             </li>
                         </ul>
                     </div>
-                    <div className="md:w-1/3">
-                        <h2 className="mb-6 text-sm font-semibold text-white uppercase">Legal</h2>
-                        <ul className="text-gray-300 font-medium">
-                            <li className="mb-4">
-                                <a className={`${hovStyle}`} href="#">
-                                    Política de privacidad
-                                </a>
+                    <div className="flex justify-start gap-2 flex-col items-center sm:items-start">
+                        <h2 className="text-sm font-semibold text-white uppercase">Legal</h2>
+                        <ul className="text-gray-300 dark:text-gray-400 font-medium flex flex-col items-center sm:items-start gap-2">
+                            <li className={`${hovStyle}`}>
+                                <a href="#">Política</a>
                             </li>
-                            <li className="mb-4">
-                                <a className={`${hovStyle}`} href="#">
-                                    Licencia
-                                </a>
+                            <li className={`${hovStyle}`}>
+                                <a href="#">Licencia</a>
                             </li>
-                            <li className="mb-4">
-                                <a className={`${hovStyle}`} href="#">
-                                    Términos y condiciones
-                                </a>
+
+                            <li className={`${hovStyle}`}>
+                                <a href="#">Términos</a>
                             </li>
                         </ul>
                     </div>
-                </div>
-                <div className="px-4 py-6 bg-neutral-950 flex justify-center">
-                    <span className="text-sm text-gray-300">
-                        © 2024{" "}
-                        <a className="text-gray-300 hover:text-gray-100" href="#">
-                            Estudio jurídico Alvarez Rey.
-                        </a>
-                    </span>
                 </div>
             </div>
+            <span className="w-full h-[1px] flex bg-gray-700/50" />
+            <span className="pb-6 bg-neutral-950 flex justify-center text-xs sm:text-sm text-gray-500">
+                © {thisYear} Estudio jurídico Alvarez Rey.
+            </span>
         </footer>
     );
 }
