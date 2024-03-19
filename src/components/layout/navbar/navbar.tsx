@@ -54,6 +54,7 @@ export function Navbar({heroRef, footerRef}: Props) {
                         <li className={navStyle}>Inicio</li>
                         <li className={navStyle}>¿Quiénes somos?</li>
                         <li className={navStyle}>¿Qué hacemos?</li>
+                        <li className={navStyle}>Profesionales</li>
                         <li className={navStyle}>Contacto</li>
                     </ul>
                 )}
@@ -76,6 +77,7 @@ export function Navbar({heroRef, footerRef}: Props) {
                     </li>
                     <li className={navStyle}>¿Quiénes somos?</li>
                     <li className={navStyle}>¿Qué hacemos?</li>
+                    <li className={navStyle}>Profesionales</li>
                     <li
                         className={navStyle}
                         onClick={() => {
