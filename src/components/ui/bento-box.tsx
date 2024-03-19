@@ -11,6 +11,7 @@ export function BentoBox({className, image, title}: Props) {
     const cardVariants: Variants = {
         offscreen: {
             y: 120,
+            opacity: 0,
         },
         onscreen: {
             y: 0,
@@ -18,6 +19,7 @@ export function BentoBox({className, image, title}: Props) {
                 type: "spring",
                 bounce: 0.4,
                 duration: 0.8,
+                opacity: 1,
             },
         },
     };

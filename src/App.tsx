@@ -19,7 +19,7 @@ function App() {
             <About />
             <Work />
             <Professionals />
-            WspButton
+            <WspButton />
             <Footer footerRef={footerRef} />
         </main>
     );
