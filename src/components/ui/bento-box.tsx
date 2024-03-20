@@ -19,8 +19,8 @@ export function BentoBox({className, image, title}: Props) {
                 type: "spring",
                 bounce: 0.4,
                 duration: 0.8,
-                opacity: 1,
             },
+            opacity: 1,
         },
     };
 
