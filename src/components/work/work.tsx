@@ -1,82 +1,53 @@
-import {Variants, motion} from "framer-motion";
+import {MutableRefObject} from "react";
 
 import {BentoBox} from "../ui/bento-box";
+import {Title} from "../ui/title";
 
-export function Work() {
-    const titleVariant: Variants = {
-        offscreen: {
-            x: -500,
-        },
-        onscreen: {
-            x: 0,
-            transition: {
-                type: "spring",
-                bounce: 0.4,
-                duration: 0.8,
-            },
-        },
-    };
+interface Props {
+    workRef: MutableRefObject<null>;
+}
 
+export function Work({workRef}: Props) {
     return (
-        <section className="max-w-screen bg-no-repeat bg-cover">
-            <div className="container min-h-screen text-center text-white bg-neutral-950 py-10 flex flex-col gap-6">
-                <motion.h2
-                    className="text-2xl text-start after:w-20 after:h-[2px] after:bg-white flex items-center gap-5"
-                    initial="offscreen"
-                    transition={{duration: 0.5}}
-                    variants={titleVariant}
-                    viewport={{once: true, amount: 0.3}}
-                    whileInView="onscreen"
-                >
-                    ¿Qué hacemos?
-                </motion.h2>
-
-                <div className="grid grid-cols-5 grid-rows-2 gap-6 max-h-[calc(100vh-200px)]">
+        <section ref={workRef} className="bg-no-repeat bg-cover max-w-screen">
+            <div className="container flex flex-col justify-center min-h-screen gap-6 py-10 text-center   bg-neutral-950">
+                <Title title="¿Qué hacemos?" />
+                <div className="grid grid-cols-2 gap-4 grid-rows-12 md:grid-cols-12 md:gap-6 md:grid-rows-8">
                     <BentoBox
-                        className="col-span-2 row-span-2"
+                        className="row-span-5 md:col-span-5 md:row-span-4"
                         image="/familia.jpg"
-                        paragraph="El derecho de familia abarca normativas que regulan relaciones familiares, como matrimonio,
-                            divorcio, custodia de hijos y pensiones alimenticias."
+                        paragraph=""
                         title="Familia"
                     />
-
                     <BentoBox
-                        className="col-span-3 row-span-2 col-start-3"
-                        image="/prejuicios.jpg"
-                        paragraph=" El área de daños y prejuicios se refiere a las reclamaciones legales que involucran lesiones
-                        personales, daños a la propiedad o pérdida financiera como resultado de la negligencia o
-                        acciones indebidas de otra parte. Esto puede incluir accidentes automovilísticos, accidentes
-                        laborales, negligencia médica y más."
-                        title="Daños y prejuicios"
-                    />
-
-                    <BentoBox
-                        className="row-span-2 row-start-3"
+                        className="row-span-4 md:col-span-4 md:col-start-1 md:row-start-5"
                         image="/laboral.jpg"
-                        paragraph="El derecho laboral se centra en las relaciones entre empleadores y empleados, así como en
-                        las normativas laborales que rigen los contratos de trabajo, los salarios, las condiciones
-                        laborales, la seguridad en el trabajo y los conflictos laborales, entre otros aspectos
-                        relacionados con el empleo."
+                        paragraph=""
                         title="Laboral"
                     />
-
                     <BentoBox
-                        className="col-span-2 row-span-2 row-start-3"
+                        className="col-start-1 row-span-4 row-start-6 md:col-span-4 md:col-start-6 md:row-start-1"
+                        image="/prejuicios.jpg"
+                        paragraph=""
+                        title="Daños y prejuicios"
+                    />
+                    <BentoBox
+                        className="col-start-2 row-span-4 row-start-5 md:col-span-3 md:col-start-10 md:row-start-1"
                         image="/genero.jpg"
-                        paragraph=" La violencia de género se refiere a cualquier acto de violencia o discriminación basado en
-                        el género, que resulta en daño físico, psicológico o emocional para una persona. Esto puede
-                        incluir violencia doméstica, agresión sexual, acoso en el lugar de trabajo y otras formas de
-                        violencia de género."
+                        paragraph=""
                         title="Violencia de Género"
                     />
-
                     <BentoBox
-                        className="col-span-2 row-span-2 col-start-4 row-start-3"
+                        className="col-start-2 row-span-4 row-start-9 md:col-span-4 md:col-start-5 md:row-start-5"
                         image="/jubilaciones.jpeg"
-                        paragraph="El término intrafamiliar se refiere a los conflictos y disputas que ocurren dentro de una
-                        misma familia. Esto puede incluir disputas de custodia, divorcios, abusos domésticos y otros
-                        problemas que afectan las relaciones entre los miembros de la familia."
-                        title="Jubilaciones"
+                        paragraph=""
+                        title="Sucesiones"
+                    />
+                    <BentoBox
+                        className="row-span-3 row-start-10 md:col-span-4 md:col-start-9 md:row-span-4 md:row-start-5"
+                        image="/jubilaciones.jpeg"
+                        paragraph=""
+                        title="Derecho del consumidor"
                     />
                 </div>
             </div>
