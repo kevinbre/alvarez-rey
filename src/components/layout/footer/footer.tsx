@@ -24,6 +24,9 @@ export function Footer({footerRef}: Props) {
                             <li className={`${hovStyle}`}>
                                 <a href="#">¿Qué hacemos?</a>
                             </li>
+                            <li className={`${hovStyle}`}>
+                                <a href="#">Profesionales</a>
+                            </li>
                         </ul>
                     </div>
                     <div className="flex flex-col items-center justify-start gap-2 sm:items-start">

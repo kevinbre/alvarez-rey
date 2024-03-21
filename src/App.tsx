@@ -6,6 +6,7 @@ import {Navbar} from "./components/layout/navbar/navbar";
 import {WspButton} from "./components/ui/wsp-button";
 import {About} from "./components/about/about";
 import {Work} from "./components/work/work";
+import {Professionals} from "./components/professionals/professionals";
 
 function App() {
     const heroRef = useRef(null);
@@ -52,7 +53,8 @@ function App() {
             <WspButton />
             <Footer footerRef={footerRef} />
             <WspButton />
-        </div>
+            <Footer footerRef={footerRef} />
+        </main>
     );
 }
 
