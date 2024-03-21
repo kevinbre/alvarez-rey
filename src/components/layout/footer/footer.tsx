@@ -9,11 +9,11 @@ export function Footer({footerRef}: Props) {
     const thisYear = new Date().getFullYear();
 
     return (
-        <footer ref={footerRef} className="flex flex-col w-full gap-6 pt-10 border-t border-gray-700  bg-neutral-950">
+        <footer ref={footerRef} className="flex flex-col w-full gap-6 pt-10 border-t border-gray-700 bg-neutral-950">
             <div className="container">
                 <div className="flex flex-col justify-between gap-6 sm:flex-row">
                     <div className="flex flex-col items-center justify-start gap-2 sm:items-start">
-                        <h2 className="text-sm font-semibold text-white uppercase">Compañía</h2>
+                        <h2 className="text-sm font-semibold uppercase">Compañía</h2>
                         <ul className="flex flex-col items-center gap-2 font-medium text-gray-300 dark:text-gray-400 sm:items-start">
                             <li className={`${hovStyle}`}>
                                 <a href="#">Inicio</a>
@@ -30,7 +30,7 @@ export function Footer({footerRef}: Props) {
                         </ul>
                     </div>
                     <div className="flex flex-col items-center justify-start gap-2 sm:items-start">
-                        <h2 className="text-sm font-semibold text-white uppercase">Centro de ayuda</h2>
+                        <h2 className="text-sm font-semibold uppercase">Centro de ayuda</h2>
                         <ul className="flex flex-col items-center gap-2 font-medium text-gray-300 dark:text-gray-400 sm:items-start">
                             <li className={`${hovStyle}`}>
                                 <a href="#">Whatsapp</a>
@@ -47,7 +47,7 @@ export function Footer({footerRef}: Props) {
                         </ul>
                     </div>
                     <div className="flex flex-col items-center justify-start gap-2 sm:items-start">
-                        <h2 className="text-sm font-semibold text-white uppercase">Legal</h2>
+                        <h2 className="text-sm font-semibold uppercase">Legal</h2>
                         <ul className="flex flex-col items-center gap-2 font-medium text-gray-300 dark:text-gray-400 sm:items-start">
                             <li className={`${hovStyle}`}>
                                 <a href="#">Política</a>
@@ -65,7 +65,7 @@ export function Footer({footerRef}: Props) {
             </div>
             <span className="w-full h-[1px] flex bg-gray-700/50" />
             <span className="flex justify-center pb-6 text-xs text-gray-500 bg-neutral-950 sm:text-sm">
-                © {thisYear} Estudio jurídico Alvarez Rey.
+                © {thisYear} Estudio jurídico Alvarez&Rey.
             </span>
         </footer>
     );
