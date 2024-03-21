@@ -1,16 +1,16 @@
 import {Pivot} from "hamburger-react";
-import {MutableRefObject, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 
 import useBreakpoint from "@/hooks/useBreakPoint";
 import useMenuRedirect from "@/hooks/useMenuRedirect";
 import {useScroll} from "@/hooks/useScroll";
+import {MenuLinks} from "@/types/menu/types";
 
 interface Props {
-    heroRef: MutableRefObject<null>;
-    footerRef: MutableRefObject<null>;
+    menuLinks: MenuLinks[];
 }
 
-export function Navbar({heroRef, footerRef}: Props) {
+export function Navbar({menuLinks}: Props) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const {isVisible} = useScroll({scrollSize: 80});
     const breakpoint = useBreakpoint();
@@ -20,11 +20,14 @@ export function Navbar({heroRef, footerRef}: Props) {
         setIsMobileMenuOpen((prevMenuOpen) => !prevMenuOpen);
         document.body.style.overflowY = isMobileMenuOpen ? "auto" : "hidden";
     };
+
     const {menuRef, scrollToRef} = useMenuRedirect();
 
     const mobileResolution = breakpoint === "sm" || breakpoint === "xs";
 
-    const navStyle = mobileResolution ? "text-lg cursor-pointer hover:underline" : "cursor-pointer hover:underline";
+    const navStyle = mobileResolution
+        ? "text-lg cursor-pointer hover:underline"
+        : "cursor-pointer relative flex flex-col max-w-fit grow-transition";
 
     useEffect(() => {
         !mobileResolution && setIsMobileMenuOpen(false);
@@ -43,7 +46,7 @@ export function Navbar({heroRef, footerRef}: Props) {
         >
             <nav
                 ref={menuRef}
-                className="container flex items-center justify-between h-16 text-white transition-all duration-500 text"
+                className="container flex items-center justify-between h-16 transition-all duration-500 text"
             >
                 <span className="text-xl font-extrabold cursor-pointer">LOGO</span>
 
@@ -51,11 +54,18 @@ export function Navbar({heroRef, footerRef}: Props) {
                     <Pivot toggled={isMobileMenuOpen} onToggle={toggleMenu} />
                 ) : (
                     <ul className="flex items-center h-full gap-12">
-                        <li className={navStyle}>Inicio</li>
-                        <li className={navStyle}>¿Quiénes somos?</li>
-                        <li className={navStyle}>¿Qué hacemos?</li>
-                        <li className={navStyle}>Profesionales</li>
-                        <li className={navStyle}>Contacto</li>
+                        {menuLinks.map((menuLink) => (
+                            <li
+                                key={menuLink.id}
+                                className={navStyle}
+                                onClick={() => {
+                                    scrollToRef(menuLink.ref);
+                                }}
+                            >
+                                {menuLink.name}
+                            </li>
+                        ))}
+                        <li className="relative flex flex-col max-w-fit grow-transition">asdasdd</li>
                     </ul>
                 )}
             </nav>
@@ -64,29 +74,20 @@ export function Navbar({heroRef, footerRef}: Props) {
                 <ul
                     className={` ${
                         isMobileMenuOpen ? "h-screen opacity-1 py-20" : "h-0 opacity-0"
-                    } overflow-hidden transition-all flex flex-col w-screen left-0 duration-500 items-center bg-neutral-950 text-white absolute`}
+                    } overflow-hidden transition-all flex flex-col w-screen left-0 duration-500 items-center bg-neutral-950   absolute`}
                 >
-                    <li
-                        className={navStyle}
-                        onClick={() => {
-                            scrollToRef(heroRef);
-                            toggleMenu();
-                        }}
-                    >
-                        Inicio
-                    </li>
-                    <li className={navStyle}>¿Quiénes somos?</li>
-                    <li className={navStyle}>¿Qué hacemos?</li>
-                    <li className={navStyle}>Profesionales</li>
-                    <li
-                        className={navStyle}
-                        onClick={() => {
-                            toggleMenu();
-                            scrollToRef(footerRef);
-                        }}
-                    >
-                        Contacto
-                    </li>
+                    {menuLinks.map((menuLink) => (
+                        <li
+                            key={menuLink.id}
+                            className={navStyle}
+                            onClick={() => {
+                                scrollToRef(menuLink.ref);
+                                toggleMenu();
+                            }}
+                        >
+                            {menuLink.name}
+                        </li>
+                    ))}
                 </ul>
             )}
         </div>
