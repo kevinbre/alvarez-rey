@@ -3,12 +3,6 @@
 @tailwind utilities;
 
   /* ===== Scrollbar CSS ===== */
-  /* Firefox */
- /*  * {
-    scrollbar-width: auto;
-    scrollbar-color: #e6e6e6 #545454;
-  }
- */
   /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
     width: 7px;
@@ -95,4 +89,20 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.grow-transition::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 120%;
+  transform: translate(-50%, -50%);
+  height: 1px;
+  background-color: white;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.grow-transition:hover::after {
+  width: 100%;
 }

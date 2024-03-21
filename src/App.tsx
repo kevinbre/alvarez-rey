@@ -50,10 +50,8 @@ function App() {
             <About aboutRef={aboutRef} />
             <Work workRef={workRef} />
             <Professionals professionalsRef={professionalsRef} />
-            <WspButton />
             <Footer footerRef={footerRef} />
             <WspButton />
-            <Footer footerRef={footerRef} />
         </main>
     );
 }
