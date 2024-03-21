@@ -65,7 +65,6 @@ export function Navbar({menuLinks}: Props) {
                                 {menuLink.name}
                             </li>
                         ))}
-                        <li className="relative flex flex-col max-w-fit grow-transition">asdasdd</li>
                     </ul>
                 )}
             </nav>
