@@ -4,26 +4,25 @@ import {useEffect, useState} from "react";
 import useBreakpoint from "@/hooks/useBreakPoint";
 import useMenuRedirect from "@/hooks/useMenuRedirect";
 import {useScroll} from "@/hooks/useScroll";
-import {MenuLinks} from "@/types/menu/types";
+import {MenuRef} from "@/types/menu/types";
+import {menuLinks} from "@/mock/nav-links";
 
 interface Props {
-    menuLinks: MenuLinks[];
+    sectionRef: MenuRef;
 }
 
-export function Navbar({menuLinks}: Props) {
+export function Navbar({sectionRef}: Props) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
     const {isVisible} = useScroll({scrollSize: 80});
     const breakpoint = useBreakpoint();
-    //TODO: Look if the implementation of the burguer menu is the best solution
+    const mobileResolution = breakpoint === "sm" || breakpoint === "xs";
+    const {menuRef, scrollToRef} = useMenuRedirect();
 
     const toggleMenu = () => {
         setIsMobileMenuOpen((prevMenuOpen) => !prevMenuOpen);
         document.body.style.overflowY = isMobileMenuOpen ? "auto" : "hidden";
     };
-
-    const {menuRef, scrollToRef} = useMenuRedirect();
-
-    const mobileResolution = breakpoint === "sm" || breakpoint === "xs";
 
     const navStyle = mobileResolution
         ? "text-lg cursor-pointer hover:underline"
@@ -59,7 +58,7 @@ export function Navbar({menuLinks}: Props) {
                                 key={menuLink.id}
                                 className={navStyle}
                                 onClick={() => {
-                                    scrollToRef(menuLink.ref);
+                                    scrollToRef(sectionRef[menuLink.ref]);
                                 }}
                             >
                                 {menuLink.name}
@@ -80,7 +79,7 @@ export function Navbar({menuLinks}: Props) {
                             key={menuLink.id}
                             className={navStyle}
                             onClick={() => {
-                                scrollToRef(menuLink.ref);
+                                scrollToRef(sectionRef[menuLink.ref]);
                                 toggleMenu();
                             }}
                         >
