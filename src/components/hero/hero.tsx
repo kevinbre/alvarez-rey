@@ -13,7 +13,7 @@ export function Hero({heroRef}: Props) {
                 className="absolute w-full h-full bg-black"
                 style={{clipPath: "polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0 85%)"}}
             >
-                <video autoPlay loop muted className="object-cover w-full h-full opacity-70" src="/hero1.mp4" />
+                <video autoPlay loop muted className="object-cover w-full h-full opacity-70" src="/hero.mp4" />
             </div>
             <div className="absolute w-full">
                 <div className="container flex flex-col items-start mt-[25dvh] w-full h-full gap-1">
