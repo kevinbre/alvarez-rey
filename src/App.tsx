@@ -9,48 +9,22 @@ import {Work} from "./components/work/work";
 import {Professionals} from "./components/professionals/professionals";
 
 function App() {
-    const heroRef = useRef(null);
-    const aboutRef = useRef(null);
-    const workRef = useRef(null);
-    const professionalsRef = useRef(null);
-    const footerRef = useRef(null);
-
-    const menuLinks = [
-        {
-            id: 0,
-            name: "Inicio",
-            ref: heroRef,
-        },
-        {
-            id: 1,
-            name: "¿Quiénes somos?",
-            ref: aboutRef,
-        },
-        {
-            id: 2,
-            name: "¿Qué hacemos?",
-            ref: workRef,
-        },
-        {
-            id: 3,
-            name: "Profesionales",
-            ref: professionalsRef,
-        },
-        {
-            id: 4,
-            name: "Contacto",
-            ref: footerRef,
-        },
-    ];
+    const sectionRef = {
+        heroRef: useRef(null),
+        aboutRef: useRef(null),
+        workRef: useRef(null),
+        professionalsRef: useRef(null),
+        footerRef: useRef(null),
+    };
 
     return (
         <main className="text-white font-monserrat bg-neutral-950">
-            <Hero heroRef={heroRef} />
-            <Navbar menuLinks={menuLinks} />
-            <About aboutRef={aboutRef} />
-            <Work workRef={workRef} />
-            <Professionals professionalsRef={professionalsRef} />
-            <Footer footerRef={footerRef} />
+            <Hero heroRef={sectionRef.heroRef} />
+            <Navbar sectionRef={sectionRef} />
+            <About aboutRef={sectionRef.aboutRef} />
+            <Work workRef={sectionRef.workRef} />
+            <Professionals professionalsRef={sectionRef.professionalsRef} />
+            <Footer sectionRef={sectionRef} />
             <WspButton />
         </main>
     );

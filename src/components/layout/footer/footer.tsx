@@ -1,32 +1,39 @@
-import {MutableRefObject} from "react";
+import {menuLinks} from "@/mock/nav-links";
+import useMenuRedirect from "@/hooks/useMenuRedirect";
+import {MenuRef} from "@/types/menu/types";
 
 interface Props {
-    footerRef: MutableRefObject<null>;
+    sectionRef: MenuRef;
 }
 
-export function Footer({footerRef}: Props) {
-    const hovStyle = "hover:underline hover:text-gray-100";
+export function Footer({sectionRef}: Props) {
+    const hovStyle = "hover:underline hover:text-gray-100 cursor-pointer";
+
     const thisYear = new Date().getFullYear();
 
+    const {scrollToRef} = useMenuRedirect();
+
     return (
-        <footer ref={footerRef} className="flex flex-col w-full gap-6 pt-10 border-t border-gray-700 bg-neutral-950">
+        <footer
+            ref={sectionRef.footerRef}
+            className="flex flex-col w-full gap-6 pt-10 border-t border-gray-700 bg-neutral-950"
+        >
             <div className="container">
                 <div className="flex flex-col justify-between gap-6 sm:flex-row">
                     <div className="flex flex-col items-center justify-start gap-2 sm:items-start">
                         <h2 className="text-sm font-semibold uppercase">Compañía</h2>
                         <ul className="flex flex-col items-center gap-2 font-medium text-gray-300 dark:text-gray-400 sm:items-start">
-                            <li className={`${hovStyle}`}>
-                                <a href="#">Inicio</a>
-                            </li>
-                            <li className={`${hovStyle}`}>
-                                <a href="#">¿Quiénes somos?</a>
-                            </li>
-                            <li className={`${hovStyle}`}>
-                                <a href="#">¿Qué hacemos?</a>
-                            </li>
-                            <li className={`${hovStyle}`}>
-                                <a href="#">Profesionales</a>
-                            </li>
+                            {menuLinks.map((link) => (
+                                <li
+                                    key={link.id}
+                                    className={`${hovStyle}`}
+                                    onClick={() => {
+                                        scrollToRef(sectionRef[link.ref]);
+                                    }}
+                                >
+                                    {link.name}
+                                </li>
+                            ))}
                         </ul>
                     </div>
                     <div className="flex flex-col items-center justify-start gap-2 sm:items-start">
