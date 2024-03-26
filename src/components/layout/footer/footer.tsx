@@ -1,5 +1,3 @@
-import {MutableRefObject} from "react";
-
 import {menuLinks} from "@/mock/nav-links";
 import useMenuRedirect from "@/hooks/useMenuRedirect";
 import {MenuRef} from "@/types/menu/types";
