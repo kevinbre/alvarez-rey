@@ -18,8 +18,8 @@ function App() {
     };
 
     return (
-        <main className="text-white font-monserrat bg-neutral-950">
-            <Hero heroRef={sectionRef.heroRef} />
+        <main className="text-primary font-monserrat bg-background">
+            <Hero contactRef={sectionRef.footerRef} heroRef={sectionRef.heroRef} />
             <Navbar sectionRef={sectionRef} />
             <About aboutRef={sectionRef.aboutRef} />
             <Work workRef={sectionRef.workRef} />

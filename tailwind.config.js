@@ -11,6 +11,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 monserrat: "'Montserrat', sans-serif",
+                marierose: "'MadreRose', sans-serif",
             },
             colors: {
                 border: "hsl(var(--border))",

@@ -1,12 +1,18 @@
 import {MutableRefObject} from "react";
 
 import {Button} from "../ui/button";
+import {Icons} from "../ui/icons";
+
+import useMenuRedirect from "@/hooks/useMenuRedirect";
 
 interface Props {
     heroRef: MutableRefObject<null>;
+    contactRef: MutableRefObject<null>;
 }
 
-export function Hero({heroRef}: Props) {
+export function Hero({heroRef, contactRef}: Props) {
+    const {scrollToRef} = useMenuRedirect();
+
     return (
         <section ref={heroRef} className="relative h-screen">
             <div
@@ -17,9 +23,17 @@ export function Hero({heroRef}: Props) {
             </div>
             <div className="absolute w-full">
                 <div className="container flex flex-col items-start mt-[25dvh] w-full h-full gap-1">
-                    <span className="text-4xl font-extrabold">LOGOTIPO</span>
-                    <h1>ESTUDIO JURÍDICO</h1>
-                    <Button size={"sm"} variant="default">
+                    <span className="text-4xl font-extrabold">
+                        <Icons.logo className="w-[300px] h-auto" />
+                    </span>
+                    <h1 className="text-primary font-marierose">ESTUDIO JURÍDICO</h1>
+
+                    <Button
+                        className="bg-background text-primary font-medium hover:text-primary-foreground"
+                        size={"sm"}
+                        variant="default"
+                        onClick={() => scrollToRef(contactRef)}
+                    >
                         Contacto
                     </Button>
                 </div>

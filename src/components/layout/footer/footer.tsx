@@ -14,14 +14,11 @@ export function Footer({sectionRef}: Props) {
     const {scrollToRef} = useMenuRedirect();
 
     return (
-        <footer
-            ref={sectionRef.footerRef}
-            className="flex flex-col w-full gap-6 pt-10 border-t border-gray-700 bg-neutral-950"
-        >
+        <footer ref={sectionRef.footerRef} className="flex flex-col w-full gap-6 pt-10 border-t border-gray-700">
             <div className="container">
                 <div className="flex flex-col justify-between gap-6 sm:flex-row">
                     <div className="flex flex-col items-center justify-start gap-2 sm:items-start">
-                        <h2 className="text-sm font-semibold uppercase">Compañía</h2>
+                        <h2 className="text-sm font-semibold uppercase">Estúdio</h2>
                         <ul className="flex flex-col items-center gap-2 font-medium text-gray-300 dark:text-gray-400 sm:items-start">
                             {menuLinks.map((link) => (
                                 <li
@@ -71,7 +68,7 @@ export function Footer({sectionRef}: Props) {
                 </div>
             </div>
             <span className="w-full h-[1px] flex bg-gray-700/50" />
-            <span className="flex justify-center pb-6 text-xs text-gray-500 bg-neutral-950 sm:text-sm">
+            <span className="flex justify-center pb-6 text-xs text-gray-500 sm:text-sm">
                 © {thisYear} Estudio jurídico Alvarez&Rey.
             </span>
         </footer>

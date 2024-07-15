@@ -5,7 +5,10 @@ const useMenuRedirect = () => {
 
     const scrollToRef = (ref: RefObject<HTMLDivElement>) => {
         if (ref && ref.current) {
-            window.scrollTo(0, ref.current.offsetTop);
+            window.scrollTo({
+                top: ref.current.offsetTop,
+                behavior: "smooth",
+            });
         }
     };
 

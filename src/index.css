@@ -18,22 +18,25 @@
     border: 0px none #ffffff;
   }
  
+
+  
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --background: 240 9% 19%;
+    --foreground: 42 28% 83%;
 
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
+    
  
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
  
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 42 28% 83%;
+    --primary-foreground: 5 36% 35%;
  
     --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
+    --secondary-foreground: 34 38% 55%;
  
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
@@ -81,6 +84,8 @@
     --ring: 0 0% 83.1%;
   }
 }
+
+
  
 @layer base {
   * {
@@ -88,6 +93,14 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  @font-face {
+    font-family: 'MadreRose';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/Madrerose.otf) format('opentype');
   }
 }
 

@@ -6,6 +6,8 @@ import useMenuRedirect from "@/hooks/useMenuRedirect";
 import {useScroll} from "@/hooks/useScroll";
 import {MenuRef} from "@/types/menu/types";
 import {menuLinks} from "@/mock/nav-links";
+import {Icons} from "@/components/ui/icons";
+import {Button} from "@/components/ui/button";
 
 interface Props {
     sectionRef: MenuRef;
@@ -38,7 +40,7 @@ export function Navbar({sectionRef}: Props) {
             style={{
                 background:
                     isVisible || isMobileMenuOpen
-                        ? "#0a0a0a"
+                        ? "#2c2c35"
                         : "linear-gradient(180deg, rgba(0,0,0, .4) 10%, transparent)",
                 boxShadow: isVisible || isMobileMenuOpen ? "0 4px 6px rgba(0,0,0,.1)" : "",
             }}
@@ -47,10 +49,19 @@ export function Navbar({sectionRef}: Props) {
                 ref={menuRef}
                 className="container flex items-center justify-between h-16 transition-all duration-500 text"
             >
-                <span className="text-xl font-extrabold cursor-pointer">LOGO</span>
+                <button onClick={() => scrollToRef(sectionRef.heroRef)}>
+                    <Icons.logoLetters
+                        className="w-[200px]"
+                        variant={isVisible || isMobileMenuOpen ? "secondary" : "main"}
+                    />
+                </button>
 
                 {mobileResolution ? (
-                    <Pivot toggled={isMobileMenuOpen} onToggle={toggleMenu} />
+                    <Pivot
+                        color={isVisible || isMobileMenuOpen ? "#B79260" : "#D8D2C0"}
+                        toggled={isMobileMenuOpen}
+                        onToggle={toggleMenu}
+                    />
                 ) : (
                     <ul className="flex items-center h-full gap-12">
                         {menuLinks.map((menuLink) => (
@@ -72,7 +83,7 @@ export function Navbar({sectionRef}: Props) {
                 <ul
                     className={` ${
                         isMobileMenuOpen ? "h-screen opacity-1 py-20" : "h-0 opacity-0"
-                    } overflow-hidden transition-all flex flex-col w-screen left-0 duration-500 items-center bg-neutral-950   absolute`}
+                    } overflow-hidden transition-all flex flex-col w-screen left-0 duration-500 items-center bg-background absolute`}
                 >
                     {menuLinks.map((menuLink) => (
                         <li

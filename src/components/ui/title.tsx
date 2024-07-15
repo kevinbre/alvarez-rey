@@ -1,12 +1,14 @@
 import {Variants, motion} from "framer-motion";
 
 import useBreakpoint from "@/hooks/useBreakPoint";
+import {cn} from "@/lib/utils";
 
 interface Props {
     title: string;
+    className?: string;
 }
 
-export function Title({title}: Props) {
+export function Title({title, className}: Props) {
     const breakpoint = useBreakpoint();
 
     const mobileResolution = breakpoint === "sm" || breakpoint === "xs";
@@ -27,7 +29,10 @@ export function Title({title}: Props) {
 
     return (
         <motion.h2
-            className="text-3xl font-semibold w-full text-start after:w-20 after:h-[2px] after:bg-white flex items-center gap-5"
+            className={cn(
+                "font-marierose text-3xl font-semibold w-full text-start after:w-20 after:h-[2px] after:bg-[#b79260] text-[#b79260] flex items-center gap-5",
+                className,
+            )}
             initial="offscreen"
             transition={{duration: 0.5}}
             variants={titleVariant}
