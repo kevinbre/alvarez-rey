@@ -1,13 +1,12 @@
 import {Pivot} from "hamburger-react";
 import {useEffect, useState} from "react";
 
+import {Icons} from "@/components/ui/icons";
 import useBreakpoint from "@/hooks/useBreakPoint";
 import useMenuRedirect from "@/hooks/useMenuRedirect";
 import {useScroll} from "@/hooks/useScroll";
-import {MenuRef} from "@/types/menu/types";
 import {menuLinks} from "@/mock/nav-links";
-import {Icons} from "@/components/ui/icons";
-import {Button} from "@/components/ui/button";
+import {MenuRef} from "@/types/menu/types";
 
 interface Props {
     sectionRef: MenuRef;
