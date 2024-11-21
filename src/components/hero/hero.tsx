@@ -26,15 +26,13 @@ export function Hero({heroRef, contactRef}: Props) {
                     <span className="text-4xl font-extrabold">
                         <Icons.logo className="w-[300px] h-auto" />
                     </span>
-                    <h1 className="text-primary font-marierose">ESTUDIO JURÍDICO</h1>
-
+                    <h1 className="text-xl text-primary font-marierose">ESTUDIO JURÍDICO</h1>
                     <Button
-                        className="bg-background text-primary font-medium hover:text-primary-foreground"
+                        className="mt-2 bg-background text-primary hover:bg-background/90"
                         size={"sm"}
-                        variant="default"
                         onClick={() => scrollToRef(contactRef)}
                     >
-                        Contacto
+                        Contáctanos
                     </Button>
                 </div>
             </div>

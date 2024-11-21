@@ -68,8 +68,8 @@ export function Footer({sectionRef}: Props) {
                 </div>
             </div>
             <span className="w-full h-[1px] flex bg-gray-700/50" />
-            <span className="flex justify-center pb-6 text-xs text-gray-500 sm:text-sm">
-                © {thisYear} Estudio jurídico Alvarez&Rey.
+            <span className="flex justify-center pb-6 text-xs text-gray-400 sm:text-sm">
+                © {thisYear} Estudio jurídico Alvarez Rey.
             </span>
         </footer>
     );
