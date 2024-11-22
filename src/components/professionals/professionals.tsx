@@ -15,9 +15,9 @@ export function Professionals({professionalsRef}: Props) {
         >
             <Title title="Profesionales" />
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-                <ProfessionalBox avatar="/avatar.jpg" name="Sandra A. Alvarez" />
-                <ProfessionalBox avatar="/avatar.jpg" name="Franco A. Rey" />
-                <ProfessionalBox avatar="/avatar.jpg" name="Martina Rey" />
+                <ProfessionalBox avatar="/avatars/sandra.webp" name="Sandra A. Alvarez" />
+                <ProfessionalBox avatar="/avatars/franco.webp" name="Franco A. Rey" />
+                <ProfessionalBox avatar="/avatars/martina.jpg" name="Martina Rey" />
             </div>
         </section>
     );
